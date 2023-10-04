@@ -10,8 +10,8 @@ wifi_login_pages_nginx_csp: >
   frame-ancestors 'self';" always;
 wifi_login_pages_organizations_src: "owlp_organizations/"
 supervisor_path: "/etc/supervisor/conf.d/%s.conf"
-www_group: "www-data"
-www_user: "www-data"
+www_group: "root"
+www_user: "root"
 openwisp2_ssl_country: "US"
 openwisp2_ssl_state: "California"
 openwisp2_ssl_locality: "San Francisco"
