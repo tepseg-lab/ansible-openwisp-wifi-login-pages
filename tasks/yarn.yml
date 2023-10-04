@@ -1,10 +1,18 @@
 ---
 
+- name: Add Github to known_hosts
+  known_hosts:
+    name: "github.com"
+    state: present
+    key: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
+    hash_host: true
+
+
 - name: openwisp-wifi-login-pages.git
   git:
-    repo: https://github.com/openwisp/openwisp-wifi-login-pages.git
+    repo: git+ssh://git@github.com/tepseg-lab/openwisp-wifi-login-pages.git
     dest: "{{ wifi_login_pages_path }}"
-    version: master
+    version: main
     force: true
   tags: git
 
